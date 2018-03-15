@@ -1,0 +1,378 @@
+<div id="cssmenu">
+	<ul>
+		<li><a href="#/results">Tournament Results</a></li>
+        <li><a href="#/bracket">Player Brackets</a></li>
+        <li><a href="#/calculator">Bracket Calculator</a></li>
+    </ul>
+</div>
+<br/>
+<div id="content-wrapper">
+  <div style="margin-left: 395px">
+	<input type="text" size="20" ng-model="bracket.name"></input>
+  </div>
+  <br/>
+  <div style="margin-left: 380px">
+	<button ng-click="addBracket(bracket)">Add</button>
+	<button ng-click="getBracket(bracket.name)">Get</button>
+	<button ng-click="updateBracket(bracket)">Update</button>
+	<button ng-click="deleteBracket(bracket)">Delete</button>
+  </div>
+  <div id="bracket">
+    <div id="round1" class="round">
+      <div class="region region1">
+        <h4 class="region1 first_region"></h4>
+        <div id="1v16" class="match m1">
+			<p class="slot slot1"><span class="seed">1</span> Villanova <em class="score"></em></p>
+			<p class="slot slot2"><span class="seed">16</span>  <em class="score"></em></p>
+        </div>
+        <div id="8v9" class="match m2">
+			<p class="slot slot1"><span class="seed">8</span> Wisconsin <em class="score"></em> </p>
+			<p class="slot slot2"><span class="seed">9</span> Virginia Tech <em class="score"></em> </p>
+        </div>
+        <div id="5v12" class="match m3">
+			<p class="slot slot1"><span class="seed">5</span> Virginia <em class="score"></em></p>
+			<p class="slot slot2"><span class="seed">12</span> UNC-Willmington <em class="score"></em> </p>
+        </div>
+        <div id="4v13" class="match m4">
+          <p class="slot slot1"><span class="seed">4</span> Florida <em class="score"></em> </p>
+          <p class="slot slot2"><span class="seed">13</span> E Tenn State <em class="score"></em> </p>
+        </div>
+        <div id="6v11" class="match m5">
+          <p class="slot slot1"><span class="seed">6</span> SMU <em class="score"></em></p>
+          <p class="slot slot2"><span class="seed">11</span>  <em class="score"></em></p>
+        </div>
+        <div id="3v14" class="match m6">
+          <p class="slot slot1"><span class="seed">3</span> Baylor <em class="score"></em> </p>
+          <p class="slot slot2"><span class="seed">14</span> New Mexico St. <em class="score"></em> </p>
+        </div>
+        <div id="7v10" class="match m7">
+          <p class="slot slot1"><span class="seed">7</span> S. Carolina <em class="score"></em> </p>
+          <p class="slot slot2"><span class="seed">10</span> Marquette <em class="score"></em> </p>
+        </div>
+        <div id="2v15" class="match m8">
+          <p class="slot slot1"><span class="seed">2</span> Duke <em class="score"></em> </p>
+          <p class="slot slot2"><span class="seed">15</span> Troy <em class="score"></em> </p>
+        </div>
+      </div>
+      <div class="region region2">
+        <h4 class="region2 first_region"></h4>
+        <div id="1v16" class="match m1">
+			<p class="slot slot1"><span class="seed">1</span> Gonzaga <em class="score"></em></p>
+			<p class="slot slot2"><span class="seed">16</span> S Dakota St. <em class="score"></em></p>
+        </div>
+        <div id="8v9" class="match m2">
+			<p class="slot slot1"><span class="seed">8</span> Northwestern <em class="score"></em> </p>
+			<p class="slot slot2"><span class="seed">9</span> Vanderbilt <em class="score"></em> </p>
+        </div>
+        <div id="5v12" class="match m3">
+			<p class="slot slot1"><span class="seed">5</span> Notre Dame <em class="score"></em></p>
+			<p class="slot slot2"><span class="seed">12</span> Princeton <em class="score"></em> </p>
+        </div>
+        <div id="4v13" class="match m4">
+          <p class="slot slot1"><span class="seed">4</span> West Virgina <em class="score"></em> </p>
+          <p class="slot slot2"><span class="seed">13</span> Bucknell <em class="score"></em> </p>
+        </div>
+        <div id="6v11" class="match m5">
+          <p class="slot slot1"><span class="seed">6</span> Maryland <em class="score"></em></p>
+          <p class="slot slot2"><span class="seed">11</span> Xavier <em class="score"></em></p>
+        </div>
+        <div id="3v14" class="match m6">
+          <p class="slot slot1"><span class="seed">3</span> Florida St. <em class="score"></em> </p>
+          <p class="slot slot2"><span class="seed">14</span> FGCU <em class="score"></em> </p>
+        </div>
+        <div id="7v10" class="match m7">
+          <p class="slot slot1"><span class="seed">7</span> St. Mary's <em class="score"></em> </p>
+          <p class="slot slot2"><span class="seed">10</span> VCU <em class="score"></em> </p>
+        </div>
+        <div id="2v15" class="match m8">
+          <p class="slot slot1"><span class="seed">2</span> Arizona <em class="score"></em> </p>
+          <p class="slot slot2"><span class="seed">15</span> North Dakota <em class="score"></em> </p>
+        </div>
+      </div>
+      <div class="region region3">
+        <h4 class="region3 first_region"></h4>
+        <div id="1v16" class="match m1">
+			<p class="slot slot1"><span class="seed">1</span> Kansas <em class="score"></em></p>
+			<p class="slot slot2"><span class="seed">16</span>  <em class="score"></em></p>
+        </div>
+        <div id="8v9" class="match m2">
+			<p class="slot slot1"><span class="seed">8</span> Miami FL <em class="score"></em> </p>
+			<p class="slot slot2"><span class="seed">9</span> Michigan St. <em class="score"></em> </p>
+        </div>
+        <div id="5v12" class="match m3">
+			<p class="slot slot1"><span class="seed">5</span> Iowa St. <em class="score"></em></p>
+			<p class="slot slot2"><span class="seed">12</span> Nevada <em class="score"></em> </p>
+        </div>
+        <div id="4v13" class="match m4">
+          <p class="slot slot1"><span class="seed">4</span> Purdue <em class="score"></em> </p>
+          <p class="slot slot2"><span class="seed">13</span> Vermont <em class="score"></em> </p>
+        </div>
+        <div id="6v11" class="match m5">
+          <p class="slot slot1"><span class="seed">6</span> Creighton <em class="score"></em></p>
+          <p class="slot slot2"><span class="seed">11</span> Rhode Island <em class="score"></em></p>
+        </div>
+        <div id="3v14" class="match m6">
+          <p class="slot slot1"><span class="seed">3</span> Oregon <em class="score"></em> </p>
+          <p class="slot slot2"><span class="seed">14</span> Iona <em class="score"></em> </p>
+        </div>
+        <div id="7v10" class="match m7">
+          <p class="slot slot1"><span class="seed">7</span> Michigan <em class="score"></em> </p>
+          <p class="slot slot2"><span class="seed">10</span> Oklahoma St. <em class="score"></em> </p>
+        </div>
+        <div id="2v15" class="match m8">
+          <p class="slot slot1"><span class="seed">2</span> Louisville <em class="score"></em> </p>
+          <p class="slot slot2"><span class="seed">15</span> Jacksonville St. <em class="score"></em> </p>
+        </div>
+      </div>
+      <div class="region region4">
+        <h4 class="region4 first_region"></h4>
+        <div id="1v16" class="match m1">
+			<p class="slot slot1"><span class="seed">1</span> North Carolina <em class="score"></em></p>
+			<p class="slot slot2"><span class="seed">16</span> Texas Southern <em class="score"></em></p>
+        </div>
+        <div id="8v9" class="match m2">
+			<p class="slot slot1"><span class="seed">8</span> Arkansas <em class="score"></em> </p>
+			<p class="slot slot2"><span class="seed">9</span> Seton Hall <em class="score"></em> </p>
+        </div>
+        <div id="5v12" class="match m3">
+			<p class="slot slot1"><span class="seed">5</span> Minnesota <em class="score"></em></p>
+			<p class="slot slot2"><span class="seed">12</span> Middle Tennessee <em class="score"></em> </p>
+        </div>
+        <div id="4v13" class="match m4">
+          <p class="slot slot1"><span class="seed">4</span> Butler <em class="score"></em> </p>
+          <p class="slot slot2"><span class="seed">13</span> Winthrop <em class="score"></em> </p>
+        </div>
+        <div id="6v11" class="match m5">
+          <p class="slot slot1"><span class="seed">6</span> Cincinnati <em class="score"></em></p>
+          <p class="slot slot2"><span class="seed">11</span>  <em class="score"></em></p>
+        </div>
+        <div id="3v14" class="match m6">
+          <p class="slot slot1"><span class="seed">3</span> UCLA <em class="score"></em> </p>
+          <p class="slot slot2"><span class="seed">14</span> Kent St. <em class="score"></em> </p>
+        </div>
+        <div id="7v10" class="match m7">
+          <p class="slot slot1"><span class="seed">7</span> Dayton <em class="score"></em> </p>
+          <p class="slot slot2"><span class="seed">10</span> Wichita St <em class="score"></em> </p>
+        </div>
+        <div id="2v15" class="match m8">
+          <p class="slot slot1"><span class="seed">2</span> Kentucky <em class="score"></em> </p>
+          <p class="slot slot2"><span class="seed">15</span> N Kentucky <em class="score"></em> </p>
+        </div>
+      </div>
+    </div>
+	
+    <div id="round2" class="round">
+      <div class="region region1">
+        <h4 class="region1"></h4>
+        <div class="match m1"></div>
+		<div class="field-left m1">
+			<input class="r2-top" type="text" ng-model="bracket.region1.winner1v16"></input>
+			<input class="r2-bottom" type="text" ng-model="bracket.region1.winner8v9"></input>
+		</div>
+		<div class="match m2"></div>
+		<div class="field-left m2">
+			<input class="r2-top" type="text" ng-model="bracket.region1.winner5v12"></input>
+			<input class="r2-bottom" type="text" ng-model="bracket.region1.winner4v13"></input>
+		</div>
+		<div class="match m3"></div>
+		<div class="field-left m3">
+			<input class="r2-top" type="text" ng-model="bracket.region1.winner6v11"></input>
+			<input class="r2-bottom" type="text" ng-model="bracket.region1.winner3v14"></input>
+		</div>
+		<div class="match m4"></div>
+		<div class="field-left m4">
+			<input class="r2-top" type="text" ng-model="bracket.region1.winner7v10"></input>
+			<input class="r2-bottom" type="text" ng-model="bracket.region1.winner2v15"></input>
+		</div>
+      </div>
+      <div class="region region2">
+        <h4 class="region2"></h4>
+        <div class="match m1"></div>
+		<div class="field-left m1">
+			<input class="r2-top" type="text" ng-model="bracket.region2.winner1v16"></input>
+			<input class="r2-bottom" type="text" ng-model="bracket.region2.winner8v9"></input>
+		</div>
+		<div class="match m2"></div>
+		<div class="field-left m2">
+			<input class="r2-top" type="text" ng-model="bracket.region2.winner5v12"></input>
+			<input class="r2-bottom" type="text" ng-model="bracket.region2.winner4v13"></input>
+		</div>
+		<div class="match m3"></div>
+		<div class="field-left m3">
+			<input class="r2-top" type="text" ng-model="bracket.region2.winner6v11"></input>
+			<input class="r2-bottom" type="text" ng-model="bracket.region2.winner3v14"></input>
+		</div>
+		<div class="match m4"></div>
+		<div class="field-left m4">
+			<input class="r2-top" type="text" ng-model="bracket.region2.winner7v10"></input>
+			<input class="r2-bottom" type="text" ng-model="bracket.region2.winner2v15"></input>
+		</div>
+      </div>
+      <div class="region region3">
+        <h4 class="region3"></h4>
+        <div class="match m1"></div>
+		<div class="field-right m1">
+			<input class="r2-top" type="text" ng-model="bracket.region3.winner1v16"></input>
+			<input class="r2-bottom" type="text" ng-model="bracket.region3.winner8v9"></input>
+		</div>
+		<div class="match m2"></div>
+		<div class="field-right m2">
+			<input class="r2-top" type="text" ng-model="bracket.region3.winner5v12"></input>
+			<input class="r2-bottom" type="text" ng-model="bracket.region3.winner4v13"></input>
+		</div>
+		<div class="match m3"></div>
+		<div class="field-right m3">
+			<input class="r2-top" type="text" ng-model="bracket.region3.winner6v11"></input>
+			<input class="r2-bottom" type="text" ng-model="bracket.region3.winner3v14"></input>
+		</div>
+		<div class="match m4"></div>
+		<div class="field-right m4">
+			<input class="r2-top" type="text" ng-model="bracket.region3.winner7v10"></input>
+			<input class="r2-bottom" type="text" ng-model="bracket.region3.winner2v15"></input>
+		</div>
+      </div>
+      <div class="region region4">
+        <h4 class="region4"></h4>
+         <div class="match m1"></div>
+		<div class="field-right m1">
+			<input class="r2-top" type="text" ng-model="bracket.region4.winner1v16"></input>
+			<input class="r2-bottom" type="text" ng-model="bracket.region4.winner8v9"></input>
+		</div>
+		<div class="match m2"></div>
+		<div class="field-right m2">
+			<input class="r2-top" type="text" ng-model="bracket.region4.winner5v12"></input>
+			<input class="r2-bottom" type="text" ng-model="bracket.region4.winner4v13"></input>
+		</div>
+		<div class="match m3"></div>
+		<div class="field-right m3">
+			<input class="r2-top" type="text" ng-model="bracket.region4.winner6v11"></input>
+			<input class="r2-bottom" type="text" ng-model="bracket.region4.winner3v14"></input>
+		</div>
+		<div class="match m4"></div>
+		<div class="field-right m4">
+			<input class="r2-top" type="text" ng-model="bracket.region4.winner7v10"></input>
+			<input class="r2-bottom" type="text" ng-model="bracket.region4.winner2v15"></input>
+		</div>
+      </div>
+    </div>
+	
+    <div id="round3" class="round">
+      <div class="region region1">
+        <h4 class="region1"></h4>
+        <div class="match m1"></div>
+        <div class="field-left m1">
+			<input class="r3-top" type="text" ng-model="bracket.region1.sweet1"></input>
+			<input class="r3-bottom" type="text" ng-model="bracket.region1.sweet2"></input>
+		</div>
+        <div class="match m2"></div>
+        <div class="field-left m2">
+			<input class="r3-top" type="text" ng-model="bracket.region1.sweet3"></input>
+			<input class="r3-bottom" type="text" ng-model="bracket.region1.sweet4"></input>
+		</div>
+      </div>
+      <div class="region region2">
+        <h4 class="region2"> </h4>
+       <div class="match m1"></div>
+        <div class="field-left m1">
+			<input class="r3-top" type="text" ng-model="bracket.region2.sweet1"></input>
+			<input class="r3-bottom" type="text" ng-model="bracket.region2.sweet2"></input>
+		</div>
+        <div class="match m2"></div>
+        <div class="field-left m2">
+			<input class="r3-top" type="text" ng-model="bracket.region2.sweet3"></input>
+			<input class="r3-bottom" type="text" ng-model="bracket.region2.sweet4"></input>
+		</div>
+      </div>
+      <div class="region region3">
+        <h4 class="region3"></h4>
+        <div class="match m1"></div>
+        <div class="field-right m1">
+			<input class="r3-top" type="text" ng-model="bracket.region3.sweet1"></input>
+			<input class="r3-bottom" type="text" ng-model="bracket.region3.sweet2"></input>
+		</div>
+        <div class="match m2"></div>
+        <div class="field-right m2">
+			<input class="r3-top" type="text" ng-model="bracket.region3.sweet3"></input>
+			<input class="r3-bottom" type="text" ng-model="bracket.region3.sweet4"></input>
+		</div>
+      </div>
+      <div class="region region4">
+        <h4 class="region4"></h4>
+        <div id="match51" class="match m1"></div>
+        <div class="match m1"></div>
+        <div class="field-right m1">
+			<input class="r3-top" type="text" ng-model="bracket.region4.sweet1"></input>
+			<input class="r3-bottom" type="text" ng-model="bracket.region4.sweet2"></input>
+		</div>
+        <div class="match m2"></div>
+        <div class="field-right m2">
+			<input class="r3-top" type="text" ng-model="bracket.region4.sweet3"></input>
+			<input class="r3-bottom" type="text" ng-model="bracket.region4.sweet4"></input>
+		</div>
+      </div>
+    </div>
+	
+    <div id="round4" class="round">
+      <div class="region region1">
+        <h4 class="region1"></h4>
+        <div class="match m1"></div>
+        <div class="field-left m1">
+			<input class="r4-top" type="text" ng-model="bracket.region1.elite1"></input>
+			<input class="r4-bottom" type="text" ng-model="bracket.region1.elite2"></input>
+		</div>
+      </div>
+      <div class="region region2">
+        <h4 class="region2"></h4>
+        <div class="match m1"></div>
+        <div class="field-left m1">
+			<input class="r4-top" type="text" ng-model="bracket.region2.elite1"></input>
+			<input class="r4-bottom" type="text" ng-model="bracket.region2.elite2"></input>
+		</div>
+      </div>
+      <div class="region region3">
+        <h4 class="region3"></h4>
+        <div class="match m1"></div>
+        <div class="field-right m1">
+			<input class="r4-top" type="text" ng-model="bracket.region3.elite1"></input>
+			<input class="r4-bottom" type="text" ng-model="bracket.region3.elite2"></input>
+		</div>
+      </div>
+      <div class="region region4">
+        <h4 class="region4"></h4>
+        <div class="match m1"></div>
+        <div class="field-right m1">
+			<input class="r4-top" type="text" ng-model="bracket.region4.elite1"></input>
+			<input class="r4-bottom" type="text" ng-model="bracket.region4.elite2"></input>
+		</div>
+      </div>
+    </div>
+	
+    <div id="round5" class="round">
+      <div class="region">
+        <div class="match m1"></div>
+         <div class="field-left m1">
+			<input class="f1" type="text" ng-model="bracket.region1.champ"></input>
+			<input class="f2" type="text" ng-model="bracket.region2.champ"></input>
+		</div>
+        <div class="match m2"></div>
+         <div class="field-right m2">
+			<input class="f3" type="text" ng-model="bracket.region3.champ"></input>
+			<input class="f4" type="text" ng-model="bracket.region4.champ"></input>
+		</div>
+      </div>
+    </div>
+	
+    <div id="round6" class="round">
+      <div class="region">
+        <div class="match m1"></div>
+        <div class="field-left m1">
+			<input class="c1" type="text" ng-model="bracket.winner"></input>
+			<input class="c2" type="text" ng-model="bracket.loser"></input>
+		</div>
+		<div class="field-left m1" style="margin-top:405px; margin-left:48px"><strong><span>WINNER</span></strong></div>
+		<div class="field-left m1" style="margin-top:485px; margin-left:50px"><strong><span>LOSER</span></strong></div>
+      </div>
+    </div>
+	
+  </div>
+</div>

@@ -2,7 +2,7 @@
 
 /* Filters */
 
-var AppFilters = angular.module('AngularSpringApp.filters', []);
+var AppFilters = angular.module('BracketMadness.filters', []);
 
 AppFilters.filter('interpolate', ['version', function (version) {
     return function (text) {

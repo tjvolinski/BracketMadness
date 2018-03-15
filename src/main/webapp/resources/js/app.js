@@ -1,25 +1,31 @@
 'use strict';
 
-var AngularSpringApp = {};
+var BracketMadness = {};
 
-var App = angular.module('AngularSpringApp', ['AngularSpringApp.filters', 'AngularSpringApp.services', 'AngularSpringApp.directives']);
+var App = angular.module('BracketMadness', ['BracketMadness.filters', 'BracketMadness.services', 'BracketMadness.directives']);
 
 // Declare app level module which depends on filters, and services
 App.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/cars', {
-        templateUrl: 'cars/layout',
-        controller: CarController
-    });
-
-    $routeProvider.when('/trains', {
-        templateUrl: 'trains/layout',
-        controller: TrainController
+    
+    $routeProvider.when('/bracket', {
+        templateUrl: 'bracket/layout',
+        controller: BracketController
     });
     
-    $routeProvider.when('/railwaystations', {
-        templateUrl: 'railwaystations/layout',
-        controller: RailwayStationController
+    $routeProvider.when('/calculator', {
+        templateUrl: 'calculator/layout',
+        controller: BracketController
     });
-
-    $routeProvider.otherwise({redirectTo: '/cars'});
+    
+    $routeProvider.when('/results', {
+        templateUrl: 'results/layout',
+        controller: BracketController
+    });
+    
+    $routeProvider.when('/stats', {
+        templateUrl: 'stats/layout',
+        controller: BracketController
+    });
+    
+    $routeProvider.otherwise({redirectTo: '/stats'});
 }]);

@@ -28,6 +28,10 @@
         <servlet-name>DispatcherServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-
+    
+    <mime-mapping>
+    	<extension>ico</extension>
+    	<mime-type>image/x-icon</mime-type>
+	</mime-mapping>
 
 </web-app>

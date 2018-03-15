@@ -1,0 +1,74 @@
+<div id="cssmenu">
+	<ul>
+		<li><a href="#/results">Tournament Results</a></li>
+        <li><a href="#/bracket">Player Brackets</a></li>
+        <li><a href="#/calculator">Bracket Calculator</a></li>
+    </ul>
+</div>
+<br/>
+<div style="margin-left: 350px">
+	<input type="text" ng-model="simulation.simulationCount"></input>
+	<button ng-click="simulateMadness(simulation); getPercentComplete(simulation.simulationCount);">Generate</button>
+	<span ng-show="percentComplete.length > 0">{{percentComplete}}</span>
+</div>
+<br/>
+<div style="margin-left: 310px">
+	 <span><b>Note:</b></span>
+	 <input type="text" ng-model="simulation.note"></input>
+	 <input type="checkbox" ng-model="simulation.officialSimulation">
+	 <span>Official Run</span>
+</div>
+<br/>
+<table ng-show="players.length > 0" style="margin-left: 75px">
+	<thead>
+		<tr>
+			<th style="text-align: center;">NAME</th>
+ 			<th style="text-align: center;">WIN</th>
+			<th style="text-align: center;">TOP3</th>
+			<th style="text-align: center;">LAST</th>
+ 			<th style="text-align: center;">POSITION</th>
+			<th style="text-align: center;">POINTS</th>
+			<th style="text-align: center;">MONEY LINE</th>
+			<th style="text-align: center;">ODDS</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="player in players">
+			<td style="text-align: center; width:100px;">{{player.playerName}}</td>
+			<td style="text-align: center; width:100px;"> 
+				<div ng-switch on="player.winChangePositive.toString()">
+					<div ng-switch-when="true">
+						{{player.winPercentage}} <span style="color:green">({{player.winChange}})</span>
+					</div>
+					<div ng-switch-default>
+						{{player.winPercentage}} <span style="color:red">({{player.winChange}})</span>
+					</div>
+				</div>
+			</td>
+			<td style="text-align: center; width:100px;"> 
+				<div ng-switch on="player.top3ChangePositive.toString()">
+					<div ng-switch-when="true">
+						{{player.top3Percentage}} <span style="color:green">({{player.top3Change}})</span>
+					</div>
+					<div ng-switch-default>
+						{{player.top3Percentage}} <span style="color:red">({{player.top3Change}})</span>
+					</div>
+				</div>
+			</td>
+			<td style="text-align: center; width:100px;">
+				<div ng-switch on="player.lastChangePositive.toString()">
+					<div ng-switch-when="true">
+						{{player.lastPercentage}} <span style="color:red">({{player.lastChange}})</span>
+					</div>
+					<div ng-switch-default>
+						{{player.lastPercentage}} <span style="color:green">({{player.lastChange}})</span>
+					</div>
+				</div>
+			</td>
+			<td style="text-align: center; width:100px;">{{player.avgFinish}}</td>
+			<td style="text-align: center; width:100px;">{{player.avgPoints}}</td>
+			<td style="text-align: center; width:100px;">{{player.moneyLine}}</td>
+			<td style="text-align: center; width:100px;">{{player.odds}}</td>
+		</tr>
+	</tbody>
+</table>
