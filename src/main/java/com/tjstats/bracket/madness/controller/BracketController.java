@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.tjstats.bracket.madness.calculator.BracketCalculator;
+import com.tjstats.bracket.madness.dao.BracketDAO;
 import com.tjstats.bracket.madness.data.BracketRepository;
 import com.tjstats.bracket.madness.domain.Bracket;
 import com.tjstats.bracket.madness.domain.Player;
@@ -20,13 +21,25 @@ public class BracketController {
 	
 	@Autowired
 	BracketCalculator bracketCalculator;
+	
+	@Autowired
+	BracketDAO bracketDAO;
 
 	@GetMapping("/")
     public String index(Model model) {
-		List<Bracket> playerBrackets = bracketRepository.getAllPlayerBrackets();
-		Bracket overrideBracket = bracketRepository.getBracket("OVERRIDE");
-		List<Player> players = bracketCalculator.processBracketCalculations(playerBrackets, 100000, overrideBracket, false);
-		model.addAttribute("players", players);
+		com.tjstats.bracket.madness.domain2.Bracket bracket = new com.tjstats.bracket.madness.domain2.Bracket();
+		bracket.setPlayerName("TJ");
+		bracket.setChamp("1");
+		bracket.setChampRegion("A");
+		bracket.setRunnerUp("2");
+		bracket.setRunnerUpRegion("D");
+		bracketDAO.insertBracket(bracket);
+		
+		
+//		List<Bracket> playerBrackets = bracketRepository.getAllPlayerBrackets();
+//		Bracket overrideBracket = bracketRepository.getBracket("OVERRIDE");
+//		List<Player> players = bracketCalculator.processBracketCalculations(playerBrackets, 100000, overrideBracket, false);
+//		model.addAttribute("players", players);
         return "stats";
     }
 }
