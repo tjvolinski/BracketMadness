@@ -1,1 +1,16 @@
-/* app css stylesheet */​
+/* app css stylesheet */
+.bracket-icon {
+    background: url('bracket.png');
+    background-size: 50px;
+    background-color: transparent;
+    height: 50px;
+    width: 50px;
+    display: block;
+    filter: invert(100%);
+}
+
+.centered {
+   margin-left: auto;
+   margin-right: auto;
+   width: 50%;
+}​

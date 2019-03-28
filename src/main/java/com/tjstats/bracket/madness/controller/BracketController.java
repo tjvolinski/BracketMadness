@@ -27,19 +27,19 @@ public class BracketController {
 
 	@GetMapping("/")
     public String index(Model model) {
-		com.tjstats.bracket.madness.domain2.Bracket bracket = new com.tjstats.bracket.madness.domain2.Bracket();
-		bracket.setPlayerName("TJ");
-		bracket.setChamp("1");
-		bracket.setChampRegion("A");
-		bracket.setRunnerUp("2");
-		bracket.setRunnerUpRegion("D");
-		bracketDAO.insertBracket(bracket);
+//		com.tjstats.bracket.madness.domain2.Bracket bracket = new com.tjstats.bracket.madness.domain2.Bracket();
+//		bracket.setPlayerName("TJ");
+//		bracket.setChamp("1");
+//		bracket.setChampRegion("A");
+//		bracket.setRunnerUp("2");
+//		bracket.setRunnerUpRegion("D");
+//		bracketDAO.insertBracket(bracket);
 		
 		
-//		List<Bracket> playerBrackets = bracketRepository.getAllPlayerBrackets();
-//		Bracket overrideBracket = bracketRepository.getBracket("OVERRIDE");
-//		List<Player> players = bracketCalculator.processBracketCalculations(playerBrackets, 100000, overrideBracket, false);
-//		model.addAttribute("players", players);
+		List<Bracket> playerBrackets = bracketRepository.getAllPlayerBrackets();
+		Bracket overrideBracket = bracketRepository.getBracket("OVERRIDE");
+		List<Player> players = bracketCalculator.processBracketCalculations(playerBrackets, 100000, overrideBracket, false);
+		model.addAttribute("players", players);
         return "stats";
     }
 }
