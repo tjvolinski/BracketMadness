@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Bracket Calculator</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-deep_orange.min.css" />
+	<link rel="stylesheet" href="css/app.css" />
+	<link rel="stylesheet" href="css/bracket.css" />
+	<link rel="icon" type="image/png" href="images/bracket.png"/>
+	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+	<script src="https://kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+	
+	<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script> 
+    <script> 
+	    $(function(){
+	      $("#projections").load("projections.html");
+	      $("#pickDistributions").load("pick-distributions.html");
+	      $("#playerBrackets").load("player-brackets.html"); 
+	    });
+    </script> 
+</head>
+
+<body>
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+	  	<header class="mdl-layout__header">
+	    	<div class="mdl-layout__header-row">
+	        	<span class="march-madness-logo"></span>
+	        	<div class="mdl-layout-spacer"></div>
+	        	<span class="bracket-icon"></span>&nbsp;&nbsp;&nbsp; 
+	     		<span class="mdl-layout-title"><b><i>Bracket Calculator</i></b></span>&nbsp;&nbsp;&nbsp;
+	    		<span class="bracket-icon flip-it"></span>
+	    		<div class="mdl-layout-spacer"></div>
+	    		<span class="tj-stats-logo"></span>
+	    	</div>
+	    	<div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+	      		<a href="#projections-tab" class="mdl-layout__tab is-active">Projections</a>
+	      		<a href="#pick-distributions-tab" class="mdl-layout__tab">Pick Distributions</a>
+	      		<a href="#player-brackets-tab" class="mdl-layout__tab">Player Brackets</a>
+	    	</div>
+	  	</header>
+	  	<div class="mdl-layout__content">
+	  		<section class="mdl-layout__tab-panel is-active" id="projections-tab">
+	  			<div id="projections"></div>
+	  		</section>
+		    <section class="mdl-layout__tab-panel" id="pick-distributions-tab">
+		      	<div id="pickDistributions"></div>
+		    </section>
+		     <section class="mdl-layout__tab-panel" id="player-brackets-tab">
+		      	<div id="playerBrackets"></div>
+		    </section>
+	    </div>
+	</div>
+</body>
+</html>

@@ -27,19 +27,26 @@ public class BracketController {
 
 	@GetMapping("/")
     public String index(Model model) {
-//		com.tjstats.bracket.madness.domain2.Bracket bracket = new com.tjstats.bracket.madness.domain2.Bracket();
-//		bracket.setPlayerName("TJ");
-//		bracket.setChamp("1");
-//		bracket.setChampRegion("A");
-//		bracket.setRunnerUp("2");
-//		bracket.setRunnerUpRegion("D");
-//		bracketDAO.insertBracket(bracket);
-		
-		
+        return "index";
+    }
+	
+	@GetMapping("/projections.html")
+    public String projectionsTab(Model model) {
+		//TODO grab data, don't need to run it
 		List<Bracket> playerBrackets = bracketRepository.getAllPlayerBrackets();
 		Bracket overrideBracket = bracketRepository.getBracket("OVERRIDE");
 		List<Player> players = bracketCalculator.processBracketCalculations(playerBrackets, 100000, overrideBracket, false);
 		model.addAttribute("players", players);
-        return "stats";
-    }
+		return "projections";
+	}
+	
+	@GetMapping("/pick-distributions.html")
+    public String pickDistributionsTab(Model model) {
+		return "pick-distributions";
+	}
+	
+	@GetMapping("/player-brackets.html")
+    public String playerBracketsTab(Model model) {
+		return "player-brackets";
+	}
 }

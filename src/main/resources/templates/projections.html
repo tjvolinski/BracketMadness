@@ -1,0 +1,32 @@
+<div class="page-content centered">
+  	<div class="mdl-grid center-items">
+		<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp sortable">
+		  <thead>
+		    <tr class="mdl-color--black">
+		    	<th class="mdl-color-text--white">NAME</th>
+				<th class="mdl-color-text--white">WIN</th>
+				<th class="mdl-color-text--white">TOP3</th>
+				<th class="mdl-color-text--white">LAST</th>
+				<th class="mdl-color-text--white">POSITION</th>
+				<th class="mdl-color-text--white">POINTS</th>
+				<th class="mdl-color-text--white">MONEY LINE</th>
+				<th class="mdl-color-text--white">ODDS</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+	     	<th:block th:each="player : ${players}">
+			    <tr class="mdl-data-table__row center-items">
+			        <td class="mdl-data-table__cell--non-numeric"><span th:text="${player.playerName}"></span></td>
+			        <td class="mdl-data-table__cell--non-numeric"><span th:text="${player.winPercentage}"></span></td>
+			      	<td class="mdl-data-table__cell--non-numeric"><span th:text="${player.top3Percentage}"></span></td>
+			      	<td class="mdl-data-table__cell--non-numeric"><span th:text="${player.lastPercentage}"></span></td>
+			      	<td class="mdl-data-table__cell--non-numeric"><span th:text="${player.avgFinish}"></span></td>
+			      	<td class="mdl-data-table__cell--non-numeric"><span th:text="${player.avgPoints}"></span></td>
+			      	<td class="mdl-data-table__cell--non-numeric"><span th:text="${player.moneyLine}"></span></td>
+			      	<td class="mdl-data-table__cell--non-numeric"><span th:text="${player.odds}"></span></td>
+			    </tr>
+			</th:block>   
+		  </tbody>
+		</table>
+	</div>
+</div>

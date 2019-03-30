@@ -1,6 +1,6 @@
 /* app css stylesheet */
 .bracket-icon {
-    background: url('bracket.png');
+    background: url('../images/bracket.png');
     background-size: 50px;
     background-color: transparent;
     height: 50px;
@@ -10,7 +10,7 @@
 }
 
 .march-madness-logo {
-    background: url('march_madness.png');
+    background: url('../images/march_madness.png');
     background-size: 125px;
     background-color: transparent;
     height: 125px;
@@ -19,7 +19,7 @@
 }
 
 .tj-stats-logo {
-    background: url('tj_stats.png');
+    background: url('../images/tj_stats.png');
     background-size: 75px;
     background-color: transparent;
     height: 70px;
