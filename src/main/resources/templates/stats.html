@@ -7,54 +7,74 @@
     <title>Bracket Madness</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-red.min.css" />
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-deep_orange.min.css" />
 	<link rel="stylesheet" href="css/app.css" />
 	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 	<script src="https://kryogenix.org/code/browser/sorttable/sorttable.js"></script>
 </head>
 
 <body>
-<header class="mdl-layout__header">
-  	<div class="mdl-layout__header-row">
-  		<span class="bracket-icon"></span>&nbsp;&nbsp;&nbsp;   
-    	<span class="mdl-layout-title">Bracket Madness</span>
-    	<div class="mdl-layout-spacer"></div>
-    	<nav class="mdl-navigation">
-       		<a class="mdl-navigation__link" href="#">Projections</a>
-       		<a class="mdl-navigation__link" href="#">Stats</a>
-       		<a class="mdl-navigation__link" href="#">Test</a>
-    	</nav>
-  	</div>
-</header>
-<div class="mdl-grid center-items centered">
-	<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp sortable">
-	  <thead>
-	    <tr class="mdl-color--indigo">
-	    	<th class="mdl-color-text--white">NAME</th>
-			<th class="mdl-color-text--white">WIN</th>
-			<th class="mdl-color-text--white">TOP3</th>
-			<th class="mdl-color-text--white">LAST</th>
-			<th class="mdl-color-text--white">POSITION</th>
-			<th class="mdl-color-text--white">POINTS</th>
-			<th class="mdl-color-text--white">MONEY LINE</th>
-			<th class="mdl-color-text--white">ODDS</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-     	<th:block th:each="player : ${players}">
-		    <tr class="mdl-data-table__row center-items">
-		        <td class="mdl-data-table__cell--non-numeric"><span th:text="${player.playerName}"></span></td>
-		        <td class="mdl-data-table__cell--non-numeric"><span th:text="${player.winPercentage}"></span></td>
-		      	<td class="mdl-data-table__cell--non-numeric"><span th:text="${player.top3Percentage}"></span></td>
-		      	<td class="mdl-data-table__cell--non-numeric"><span th:text="${player.lastPercentage}"></span></td>
-		      	<td class="mdl-data-table__cell--non-numeric"><span th:text="${player.avgFinish}"></span></td>
-		      	<td class="mdl-data-table__cell--non-numeric"><span th:text="${player.avgPoints}"></span></td>
-		      	<td class="mdl-data-table__cell--non-numeric"><span th:text="${player.moneyLine}"></span></td>
-		      	<td class="mdl-data-table__cell--non-numeric"><span th:text="${player.odds}"></span></td>
-		    </tr>
-		</th:block>   
-	  </tbody>
-	</table>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+  	<header class="mdl-layout__header custom-header">
+    	<div class="mdl-layout__header-row">
+        	<span class="bracket-icon"></span>&nbsp;&nbsp;&nbsp;   
+    		<span class="mdl-layout-title"><b><i>Bracket Madness</i></b></span>&nbsp;&nbsp;&nbsp;
+    		<span class="bracket-icon flip-it"></span>
+    		<div class="mdl-layout-spacer"></div>
+    		<span class="march-madness-logo"></span>
+    	</div>
+    	<div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+      		<a href="#fixed-tab-1" class="mdl-layout__tab is-active">Projections</a>
+      		<a href="#fixed-tab-2" class="mdl-layout__tab">Stats</a>
+      		<a href="#fixed-tab-3" class="mdl-layout__tab">Test</a>
+    	</div>
+  	</header>
+  	<div class="mdl-layout__content">
+	    <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+	      <div class="page-content">
+	      	<div class="mdl-grid center-items">
+				<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp sortable">
+				  <thead>
+				    <tr class="mdl-color--indigo">
+				    	<th class="mdl-color-text--white">NAME</th>
+						<th class="mdl-color-text--white">WIN</th>
+						<th class="mdl-color-text--white">TOP3</th>
+						<th class="mdl-color-text--white">LAST</th>
+						<th class="mdl-color-text--white">POSITION</th>
+						<th class="mdl-color-text--white">POINTS</th>
+						<th class="mdl-color-text--white">MONEY LINE</th>
+						<th class="mdl-color-text--white">ODDS</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+			     	<th:block th:each="player : ${players}">
+					    <tr class="mdl-data-table__row center-items">
+					        <td class="mdl-data-table__cell--non-numeric"><span th:text="${player.playerName}"></span></td>
+					        <td class="mdl-data-table__cell--non-numeric"><span th:text="${player.winPercentage}"></span></td>
+					      	<td class="mdl-data-table__cell--non-numeric"><span th:text="${player.top3Percentage}"></span></td>
+					      	<td class="mdl-data-table__cell--non-numeric"><span th:text="${player.lastPercentage}"></span></td>
+					      	<td class="mdl-data-table__cell--non-numeric"><span th:text="${player.avgFinish}"></span></td>
+					      	<td class="mdl-data-table__cell--non-numeric"><span th:text="${player.avgPoints}"></span></td>
+					      	<td class="mdl-data-table__cell--non-numeric"><span th:text="${player.moneyLine}"></span></td>
+					      	<td class="mdl-data-table__cell--non-numeric"><span th:text="${player.odds}"></span></td>
+					    </tr>
+					</th:block>   
+				  </tbody>
+				</table>
+			</div>
+	      </div>
+	    </section>
+	    <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+	      <div class="page-content">Tab2 content
+	        Your content goes here
+	      </div>
+	    </section>
+	    <section class="mdl-layout__tab-panel" id="fixed-tab-3">
+	      <div class="page-content">Tab3 content
+	        Your content goes here
+	      </div>
+	    </section>
+    </div>
 </div>
 </body>
 </html>

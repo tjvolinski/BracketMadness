@@ -9,8 +9,27 @@
     filter: invert(100%);
 }
 
+.march-madness-logo {
+    background: url('march_madness.png');
+    background-size: 150px;
+    background-color: transparent;
+    height: 150px;
+    width: 150px;
+    display: block;
+}
+
 .centered {
    margin-left: auto;
    margin-right: auto;
-   width: 50%;
+   width: 40%;
+}
+
+.flip-it {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    transform: scaleX(-1);
+    -ms-filter: "FlipH";
+    filter: FlipH;
 }​
