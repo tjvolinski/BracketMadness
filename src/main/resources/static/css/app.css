@@ -11,17 +11,35 @@
 
 .march-madness-logo {
     background: url('march_madness.png');
-    background-size: 150px;
+    background-size: 125px;
     background-color: transparent;
-    height: 150px;
-    width: 150px;
+    height: 125px;
+    width: 125px;
+    display: block;
+}
+
+.tj-stats-logo {
+    background: url('tj_stats.png');
+    background-size: 75px;
+    background-color: transparent;
+    height: 70px;
+    width: 75px;
     display: block;
 }
 
 .centered {
-   margin-left: auto;
-   margin-right: auto;
-   width: 40%;
+   margin:0px auto;
+   width: 700px;
+}
+
+.centered-bracket {
+   margin:0px auto;
+   width: 950px;
+}
+
+.centered-player-search {
+   margin: auto;
+   width: 150px;
 }
 
 .flip-it {
@@ -32,4 +50,27 @@
     transform: scaleX(-1);
     -ms-filter: "FlipH";
     filter: FlipH;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }​
